@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <app version="1">
-  <name>Eject Disc</name>
-  <coder>Lynx64</coder>
+  <name>Mess With SMC</name>
+  <coder>Spletz</coder>
   <version>1.0</version>
   <release_date>20250603000000</release_date>
   <url>https://github.com/Lynx64/EjectDisc</url>
