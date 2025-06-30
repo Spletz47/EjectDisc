@@ -30,7 +30,7 @@ void giveEjectRequestPpcPermissions() {
     // SMC entity is at 0xE6040D94
     // SMC attributes array: 0xE6044364
     uint32_t permissions = 0;
-    // +44 for 2nd attribute (which is EjectRequest), +8 for permissions
+    // +616 for 15th attribute (which is NotificationLED), +8 for permissions
     Mocha_IOSUKernelRead32(0xE6044364 + 44 + 8, &permissions);
     // by default EjectRequest has perms 0xFF (BSP_PERMISSIONS_IOS)
     Mocha_IOSUKernelWrite32(0xE6044364 + 44 + 8, permissions | 0xF00); // BSP_PERMISSIONS_PPC_USER
@@ -53,7 +53,7 @@ int32_t main() {
     Mocha_InitLibrary();
     giveEjectRequestPpcPermissions();
     uint32_t request = 1;
-    bspWrite("SMC", 0, "EjectRequest", 4, &request);
+    bspWrite("SMC", 0, "NotificationLED", 1, &request);
 
     ProcUIStatus status = PROCUI_STATUS_IN_FOREGROUND;
     while ((status = ProcUIProcessMessages(TRUE)) != PROCUI_STATUS_EXITING) {
