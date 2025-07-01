@@ -31,9 +31,9 @@ void giveEjectRequestPpcPermissions() {
     // SMC attributes array: 0xE6044364
     uint32_t permissions = 0;
     // +616 for 15th attribute (which is NotificationLED), +8 for permissions
-    Mocha_IOSUKernelRead32(0xE6044364 + 44 + 8, &permissions);
+    Mocha_IOSUKernelRead32(0xE6044364 + 616 + 8, &permissions);
     // by default EjectRequest has perms 0xFF (BSP_PERMISSIONS_IOS)
-    Mocha_IOSUKernelWrite32(0xE6044364 + 44 + 8, permissions | 0xF00); // BSP_PERMISSIONS_PPC_USER
+    Mocha_IOSUKernelWrite32(0xE6044364 + 616 + 8, permissions | 0xF00); // BSP_PERMISSIONS_PPC_USER
 }
 
 void procUiSaveCallback() {
