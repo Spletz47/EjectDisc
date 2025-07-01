@@ -17,9 +17,9 @@ TOPDIR ?= $(CURDIR)
 # APP_SHORTNAME sets the short name of the application
 # APP_AUTHOR sets the author of the application
 #-------------------------------------------------------------------------------
-APP_NAME		:= Eject Disc
-APP_SHORTNAME	:= Eject Disc
-APP_AUTHOR		:= Lynx64
+APP_NAME		:= Test LED
+APP_SHORTNAME	:= Test LED
+APP_AUTHOR		:= Spletz
 
 include $(DEVKITPRO)/wut/share/wut_rules
 
